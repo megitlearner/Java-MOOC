@@ -6,22 +6,19 @@ public class Password {
     public static void main(String[] args) {
         Scanner reader = new Scanner(System.in);
         String password = "carrot"; // Use carrot as password when running tests.
+        String secretMessage = "jryy qbar";
 
-        // Write your code here
-        while(true)
-        {
-            System.out.println("Enter Password");
-            String pass = reader.nextLine();
-            if (pass.equals(password))
-            {
-                System.out.println("Your password is correct. Secret code is Vegas");
+        while (true) {
+            System.out.println("Type the password:");
+            String readPassword = reader.nextLine();
+
+            if (readPassword.equals(password)) {
+                System.out.println("Right!");
+                System.out.println("The secret is: " + secretMessage);
                 break;
-                
+            } else {
+                System.out.println("Wrong!");
             }
-            
-            
-           
         }
-        
-    }
+    }   
 }
