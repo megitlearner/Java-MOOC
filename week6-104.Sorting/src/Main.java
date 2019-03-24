@@ -28,9 +28,10 @@ public class Main {
 
     public static int indexOfTheSmallestStartingFrom(int[] array, int index) {
         int minIndex = index;
+        int min = array[minIndex];
         for (int i = minIndex; i < array.length; i++) {
-            if (array[i] < minIndex) {
-                //minIndex = array[i];
+            if (array[i] < min) {
+                min = array[i];
                 minIndex = i;
             }
         }
@@ -50,12 +51,11 @@ public class Main {
         int min = array[0];
         for (int i = 0; i < array.length; i++) {
             System.out.println("We're at stage " + i);
-            if (array[i] < min) {
-                min = array[i];
-                //System.out.println(Arrays.toString(array));
-            }
+            int smallestIndex = indexOfTheSmallestStartingFrom(array, i);
+            swap(array, i, smallestIndex);
             System.out.println(Arrays.toString(array));
         }
+        
     }
 
     public static void main(String[] args) {
@@ -70,8 +70,8 @@ public class Main {
         swap(values, 1, 0);
         System.out.println(Arrays.toString(values));
          */
-        //int[] values1 = {8, 3, 7, 9, 1, 2, 4};
-        //sort(values1);
+        int[] values1 = {8, 3, 7, 9, 1, 2, 4};
+        sort(values1);
 
         int[] values = {-1, 6, 9, 8, 12};
         System.out.println(indexOfTheSmallestStartingFrom(values, 1));
